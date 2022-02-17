@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.wolffy</groupId>
+        <artifactId>JavaAgentDemo</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>HelloAgent</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>jdk.tools</groupId>
+            <artifactId>jdk.tools</artifactId>
+            <version>${java.version}</version>
+            <scope>system</scope>
+            <systemPath>${JAVA_HOME}\lib\tools.jar</systemPath>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>HelloAgent</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <compilerArguments>
+                        <bootclasspath>${java.home}/lib/rt.jar</bootclasspath>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <!-- 为java -jar指令运行包的时候提供一个main方法入口 -->
+                            <mainClass>com.wolffy.hello.HelloMain</mainClass>
+                        </manifest>
+                        <manifestEntries>
+                            <!-- 预先处理的类，里面一定要有premain()方法 -->
+                            <Premain-Class>com.wolffy.hello.HelloPremain</Premain-Class>
+
+                            <!-- 后置处理的类，里面一定要有agentmain()方法 -->
+                            <!-- <Agent-Class>com.wolffy.hello.HelloAgentmain</Agent-Class> -->
+
+                            <!-- 是否可以重新定义class -->
+                            <Can-Redefine-Classes>true</Can-Redefine-Classes>
+                            <!-- 是否可以重新转换class -->
+                            <Can-Retransform-Classes>true</Can-Retransform-Classes>
+                            <!-- 是否可以设置native方法的前缀 -->
+                            <Can-Set-Native-Method-Prefix>true</Can-Set-Native-Method-Prefix>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
