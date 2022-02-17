@@ -1,37 +1,27 @@
 # JavaAgentDemo
 
+
+
 #### 介绍
-JavaAgent的案例代码
-
-#### 软件架构
-软件架构说明
+一份基础的JavaAgent案例代码，里面包含了premain和agentmain的使用方法，也有ClassFileTransformer的使用方法，配合asm框架进行了class字节码修改
 
 
-#### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+#### 强烈推荐
+[字节码框架 - ASM](https://lsieun.github.io/)
 
 
-#### 特技
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+#### 作者网站
+[积微成著](https://www.jiweichengzhu.com/)
+
+[加群方式](https://www.jiweichengzhu.com/join/group)
+
+[Jetbrains全家桶激活【 idea、webstorm、phpstorm、pycharm、goland、datagrip】](https://www.jiweichengzhu.com/idea/code)
+
+
+
+#### 作者公众号
+<div>
+<img alt="Java者说" src="https://jwcz.oss-cn-shanghai.aliyuncs.com/images/javazs-wx.jpg" style="width:300px;height:300px;border:1px solid #ddd">
+</div>
